@@ -1,19 +1,20 @@
-import read_pdf
+import get_title
 import re
 
-text = read_pdf.pdfreading()
- 
-m = re.search("\w\w\d\d\d\d\d\d\d\d\d\d", text)
+text = get_title.pdfreading()
 
-if m:
-   
-   print(m.group(0)) 
+for i in text.values(): 
 
+	m = re.search("\w\w\d\d\d\d\d\d\d\d\d\d", i)
 
-else:
-    n = re.search("\w\w\d\d\w\w\w\w\w\w\d\d",text)
+	if m:
+	   
+	   print(m.group(0)) 
 
-    print(n.group(0))
+	else:
+	    n = re.search("\w\w\d\d\w\w\w\w\w\w\d\d",i)
+
+	    print(n.group(0))
 
   
 

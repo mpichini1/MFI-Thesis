@@ -15,11 +15,11 @@ page_interpreter = PDFPageInterpreter(resource_manager, converter)
 def pdfreading():
 
 		
-	with open('C:/Users/mpich/Desktop/MFI-Thesis/KIID/Balanced/LU1006080730.pdf', 'rb') as fh:
+	with open('C:/Users/mpich/Desktop/MFI-Thesis/KIID/Bond/LU0154237225.pdf', 'rb') as fh:
 
 		for page in PDFPage.get_pages(fh,
 			caching=True,
-			check_extractable=True):
+			check_extractable=False):
 			page_interpreter.process_page(page)
 
 			text = fake_file_handle.getvalue()
@@ -32,5 +32,5 @@ def pdfreading():
 	
 	return text
 
-#print(pdfreading())
+print(pdfreading())
 
